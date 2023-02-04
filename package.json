@@ -1,0 +1,76 @@
+{
+  "name": "dream-player",
+  "version": "1.0.0",
+  "description": "dream-player backend api",
+  "main": "index.js",
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deveshasawa28/dream-player.git"
+  },
+  "keywords": [
+    "dream-player"
+  ],
+  "author": "MIT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deveshasawa28/dream-player/issues"
+  },
+  "homepage": "https://github.com/deveshasawa28/dream-player#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit",
+      "commit-msg": ""
+    }
+  },
+  "scripts": {
+    "open_docs_win": "start http://localhost:7000/docs",
+    "open_docs_mac": "open http://localhost:8081/docs",
+    "start": "node ./server.js",
+    "dev": "fastify start -w -l info -P index.js",
+    "dev:doc": "npm run open_docs_win && fastify start -w -l info -P index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard",
+    "lint:fix": "standard --fix",
+    "prepare": "husky install",
+    "precommit": "npm audit && npm run lint:fix",
+    "precommit:msg": "commitlint -E HUSKY_GIT_PARAMS"
+  },
+  "dependencies": {
+    "@fastify/ajv-compiler": "^3.5.0",
+    "@fastify/autoload": "^5.7.1",
+    "@fastify/cors": "^8.2.0",
+    "@fastify/env": "^4.2.0",
+    "@fastify/jwt": "^6.5.0",
+    "@fastify/multipart": "^7.4.0",
+    "@fastify/swagger": "^8.3.0",
+    "@fastify/swagger-ui": "^1.3.0",
+    "aws-sdk": "^2.1304.0",
+    "axios": "^1.2.6",
+    "bcrypt-nodejs": "^0.0.3",
+    "boom": "^7.3.0",
+    "close-with-grace": "^1.1.0",
+    "cron": "^2.2.0",
+    "fastify": "^4.12.0",
+    "fastify-cli": "^5.7.1",
+    "fastify-mailer": "^2.3.1",
+    "fastify-multer": "^2.0.3",
+    "fastify-plugin": "^4.5.0",
+    "flat": "^5.0.2",
+    "mongoose": "^6.9.0",
+    "mongoose-aggregate-paginate-v2": "^1.0.6",
+    "mongoose-array-validator": "^1.0.3",
+    "mongoose-paginate-v2": "^1.7.1",
+    "multer-s3-transform": "^2.3.2",
+    "nodemailer": "^6.9.1",
+    "nodemon": "^2.0.20",
+    "raw-body": "^2.5.1",
+    "standard": "^17.0.0",
+    "uuid": "^9.0.0",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "commitlint": "^17.4.2",
+    "husky": "^8.0.0"
+  }
+}
